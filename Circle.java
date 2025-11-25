@@ -1,21 +1,26 @@
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Circle {
     public double velocityX; //type double for smoother movement
     public double velocityY;
     public double coordinateY;
     public double coordinateX;
-    Motion motion;
+    ArrayList<Motion> motions;
+    public final CirclePanel panel;
 
-    public Circle(Motion motion,double coordinateX, double coordinateY) {
+    public Circle(ArrayList<Motion> motion, double coordinateX, double coordinateY, CirclePanel panel) {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
-        this.motion =  motion;
+        this.motions =  motion;
+        this.panel = panel;
         System.out.println("Circle constructor called");
     }
 
     void update(){
-        motion.update(this);
+        for (Motion m : motions) {
+            m.update(this, panel);
+        }
         System.out.println("update method called (Circle class)");
     }
 

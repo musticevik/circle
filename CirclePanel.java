@@ -6,14 +6,18 @@ import java.util.ArrayList;
 
 public class CirclePanel extends JPanel {
     public final ArrayList<Circle> circleArrayList = new ArrayList<Circle>();
+    public final ArrayList<Motion> motionArrayList = new ArrayList<Motion>();
     public CirclePanel (){
 
         setBackground(Color.BLACK);
+        motionArrayList.add(new CircleGravity());
+        motionArrayList.add(new Bounce());
         addMouseListener(new MouseListener() {
+
             @Override
             public void mouseClicked(MouseEvent e) {
                 synchronized (circleArrayList) {
-                    circleArrayList.add(new Circle(new CircleGravity(),e.getX(), e.getY()));
+                    circleArrayList.add(new Circle(motionArrayList, e.getX(), e.getY(), CirclePanel.this));
                 }
                 System.out.println("mouse clicked");
             }
