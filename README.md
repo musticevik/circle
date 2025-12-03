@@ -41,8 +41,8 @@ Just added 3D Library support which is avaliable on 3D-Branch.
 
 
 Used online sources:
-https://www.youtube.com/@Randomcode_0 
-I have used this channel in order to learn how JavaFX library works.
+https://www.youtube.com/@Randomcode_0 , https://www.youtube.com/@GenuineCoder
+I have used these channels in order to learn how JavaFX library works.
 Since I got no experience on working with this library, this channel helped me a lot.
 
 Since I am in an ongoing internship and didnt know how to work with javaFX library, the delivery of the code was a bit slow. I offer my apologies.
